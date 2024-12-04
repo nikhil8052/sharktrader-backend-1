@@ -53,9 +53,8 @@ class ApiController extends Controller
         return successResponse(null,$strategies);
     }
 
-    public function spiderWeb(){
+    public function spiderWeb( Request $request){
         $user = $request->user();
-
         // Get the user's sharks, filtering by the ones that are present
         $present = $user->sharks->filter(function ($shark) {
             return $shark->pivot->present == true;
@@ -63,7 +62,7 @@ class ApiController extends Controller
 
         // Return the sharks data along with the first present shark
         return response()->json([
-            'sharks' => $user->sharks, // All sharks associated with the user
+            'sharks' => Shark::all(), // All sharks associated with the user
             'present' => $present->first(), // The first present shark
             'user' => $user, // The authenticated user
         ], 200);

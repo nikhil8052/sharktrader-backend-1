@@ -27,6 +27,7 @@ Route::prefix('/v1')->group(function (){
 
 Route::post('/login', [ApiController::class, 'login']);
 Route::get('/list-strategies', [ApiController::class, 'getAllStrategies']);
-Route::get('/spider-web', [ApiController::class, 'spiderWeb']);
-
+Route::middleware('auth:sanctum')->group(function () {
+   Route::get('/spider-web', [ApiController::class, 'spiderWeb']);
+});
 
