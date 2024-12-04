@@ -1,0 +1,1 @@
+/usr/local/lsws/lsphp81/bin/php /home/eternity-trade.com/public_html/artisan schedule:run >> /dev/null 2>&1

@@ -1,0 +1,137 @@
+// Fonts
+//@import url('https://fonts.cdnfonts.com/css/futura-pt');
+@font-face {
+    font-family: "Khalid";
+    src: url("../../public/fonts/DehalviKhushKhat-L.ttf") format("ttf");
+}
+
+// Bootstrap
+// @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
+@import 'vue3-tel-input/dist/vue3-tel-input.css';
+
+
+// Variables
+@import 'variables';
+@import 'nav.css';
+@import 'styles.css';
+
+* {
+    --bs-btn-font-size: 0.8rem !important;
+    --bs-body-font-size: 0.8rem !important;
+    --bs-link-color: #393931;
+}
+
+body {
+    font-family: "Khalid", sans-serif;
+}
+
+//.row {
+//    margin: 0;
+//}
+
+.btn {
+    --bs-btn-padding-y: 0;
+}
+
+label {
+    line-height: 1.5rem;
+}
+
+.form-check-input {
+    margin-top: 0.4em;
+}
+
+
+.attention {
+	-webkit-animation: attention 1.5s ease-in-out infinite both;
+	        animation: attention 1.5s ease-in-out infinite both;
+}
+.form-label {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+@-webkit-keyframes attention {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes attention {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+
+.working{
+    animation: working 2s ease-in-out infinite;
+  }
+
+@keyframes working {
+    0%{
+       transform: rotate(0deg);
+      }
+   100%{
+       transform: rotate(360deg);
+      }
+   }

@@ -1,0 +1,126 @@
+* {
+    --nav-width: 4.5rem;
+    --nav-height: 3rem;
+}
+
+nav {
+    color: #3a3831;
+}
+.background-img-nav {
+    height: 3rem;
+    width: inherit;
+    position: fixed;
+    z-index: 99;
+    padding: 0;
+}
+.container-bottom-icons{
+    display: flex;
+    justify-content: space-between;
+}
+#nav-top {
+    position: sticky;
+    height: var(--nav-height);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 0 5px 5px 5px;
+    font-family: "Khalid", sans-serif;
+    color: #ffffff;
+    background: no-repeat rgb(44, 44, 44);
+    box-shadow: 0 13px 10px -6px rgba(0, 0, 0, .4)
+}
+#scroll-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    height: 3px;
+    background-color: #10cef2;
+    transition: width 0.2s ease;
+}
+
+#nav-top .container #first-nav-container, #nav-top .container .menu-tutorial-wrapper {
+    width: 50%;
+}
+#nav-top .container #first-nav-container {
+    text-align: left;
+    padding: 0;
+}
+#nav-bottom {
+    background-color: #242424;
+    height: 3.4rem;
+    max-width: 450px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    color: #3a3831;
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+#nav-top a {
+    color: #ffffff;
+}
+
+
+#nav-top svg {
+    height: calc(var(--nav-width) / 2.5);
+    stroke: #636262;
+    fill: #ffffff;
+}
+
+#nav-top #menu-icon-container {
+    width: var(--nav-width);
+    height: var(--nav-height);
+    display: grid;
+    place-content: center;
+}
+
+#third-nav-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#third-nav-container > a {
+    transform: rotateY(180deg);
+  }
+
+#third-nav-container img {
+    height: calc(var(--nav-width) / 2.5);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#third-nav-container>div {
+    display: flex;
+    position: relative;
+}
+
+#third-nav-container>div:not(:last-of-type):hover::after {
+    content: attr(title);
+    background-color: #606060;
+    padding: 0.5rem;
+    position: absolute;
+    top: var(--nav-height);
+    font-size: 0.7rem;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0.2rem;
+    box-shadow: 0 0.1rem 0.2rem var(--input-border-color);
+}
+
+@media (max-width: 800px) {
+    #second-nav-container #search-form {
+        max-width: initial;
+        width: initial;
+        grid-template-columns: initial;
+    }
+
+    #second-nav-container {
+        padding-right: 1rem;
+    }
+}
