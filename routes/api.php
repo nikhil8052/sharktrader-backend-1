@@ -4,6 +4,7 @@ use App\Http\Controllers\DepositController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ApiController;
+use Illuminate\Session\Middleware\StartSession;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,6 @@ use App\Http\Controllers\API\ApiController;
 |
 */
 
-Route::middleware('auth:sanctum')->group(function(){
-
-});
 
 Route::prefix('/v1')->group(function (){
    Route::get('/deposits/confirm/invoice/',[DepositController::class, 'storeDeposit']);
@@ -27,7 +25,15 @@ Route::prefix('/v1')->group(function (){
 
 Route::post('/login', [ApiController::class, 'login']);
 Route::get('/list-strategies', [ApiController::class, 'getAllStrategies']);
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:sanctum', StartSession::class])->group(function () {
    Route::get('/spider-web', [ApiController::class, 'spiderWeb']);
+   Route::post('/buy-spider-web', [ApiController::class, 'spiderWebBuy']);
+   Route::get('/setup-2fa', [ApiController::class, 'setup2fa']);
+   Route::get('/quant-trade', [ApiController::class, 'getQuantTrades']);
+   Route::get('/quant-trade/{quantTrade}', [ApiController::class, 'getQuantTradesShow']);
+
+
+
+
 });
 
