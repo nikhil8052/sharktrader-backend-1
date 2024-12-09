@@ -9,6 +9,7 @@
         "ext-curl": "*",
         "algolia/algoliasearch-client-php": "^3.3",
         "bacon/bacon-qr-code": "*",
+        "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.5",
         "laravel-notification-channels/sms77": "^1.0",
         "laravel/framework": "^9.19",

@@ -39,6 +39,18 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 |
 */
 
+
+Route::options('/{any}', function () {
+    return response()->json([], 204, [
+        'Access-Control-Allow-Origin' => 'http://localhost:3000',
+        'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers' => 'Content-Type, Authorization',
+    ]);
+})->where('any', '.*');
+
+
+
+
 Route::get('/sms-code', [PhoneNumbersController::class, 'store']);
 Route::get('/app-optimize', function (){
    /* $otp = \App\Models\OtpTable::first();

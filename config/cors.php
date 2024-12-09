@@ -21,6 +21,10 @@ return [
 
     'allowed_origins' => ['*'],
 
+    'allowed_origins' => ['http://localhost:3000'], // Allow requests from your frontend URL
+
+    'allowed_headers' => ['Content-Type', 'X-Requested-With', 'Authorization', 'Accept', 'Origin'],
+
     'allowed_origins_patterns' => [],
 
     'allowed_headers' => ['*'],

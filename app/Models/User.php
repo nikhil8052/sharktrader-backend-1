@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Carbon\Carbon;
 
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -20,6 +21,8 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
+
+
     protected $fillable = [
         'name',
         'username',
@@ -130,4 +133,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Checkin::class, 'user_id', 'id');
     }
+
+   
 }
